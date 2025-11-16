@@ -5,8 +5,8 @@ import re
 import time
 import logging
 import requests
+import json
 from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
 # ---------------- CONFIG ----------------
@@ -18,23 +18,11 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 
 # ---------------- AUTH ----------------
 def gmail_authenticate():
-    creds = None
-    token_path = '/etc/secrets/token.json'
-    creds_path = '/etc/secrets/credentials.json'
-
-    # Check if token.json exists (for OAuth refresh)
-    if os.path.exists(token_path):
-        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
-
-    # If no valid creds, start OAuth flow
-    if not creds or not creds.valid:
-        flow = InstalledAppFlow.from_client_secrets_file(creds_path, SCOPES)
-        creds = flow.run_local_server(port=0)
-
-        # Save token to /tmp (Render allows writing here)
-        with open('/tmp/token.json', 'w') as token:
-            token.write(creds.to_json())
-
+    token_json = os.getenv("GMAIL_TOKEN")
+    if not token_json:
+        raise ValueError("GMAIL_TOKEN environment variable is missing. Add it in Render dashboard.")
+    
+    creds = Credentials.from_authorized_user_info(json.loads(token_json), SCOPES)
     return build('gmail', 'v1', credentials=creds)
 
 # ---------------- EMAIL PARSING ----------------
