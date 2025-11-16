@@ -3,4 +3,5 @@ google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
 pandas
-flask   # if your dashboard uses Flask
+flask
+google-cloud-pubsub
