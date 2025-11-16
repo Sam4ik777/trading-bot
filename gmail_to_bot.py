@@ -27,9 +27,13 @@ def gmail_authenticate():
 
 # ---------------- EMAIL PARSING ----------------
 def extract_signal(body):
+    # Log the raw email body for debugging
+    logging.info(f"Email body:\n{body}")
+
+    # Flexible regex for BUY/SELL, symbol, and price
     signal_match = re.search(r'\b(BUY|SELL)\b', body.upper())
-    symbol_match = re.search(r'Symbol:\s*([A-Z]{1,5})', body)
-    price_match = re.search(r'Price:\s*(\d+\.\d+)', body)
+    symbol_match = re.search(r'(?:Symbol:\s*)?([A-Z]{1,6})', body)  # Matches 'Symbol: XYZ' or just XYZ
+    price_match = re.search(r'(?:Price:\s*)?(\d+\.\d+)', body)      # Matches 'Price: 123.45' or just 123.45
 
     signal = signal_match.group(0) if signal_match else None
     symbol = symbol_match.group(1) if symbol_match else None
