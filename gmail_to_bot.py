@@ -19,13 +19,22 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 # ---------------- AUTH ----------------
 def gmail_authenticate():
     creds = None
-    if os.path.exists('/etc/secrets/token.json'):
-        creds = Credentials.from_authorized_user_file('/etc/secrets/token.json', SCOPES
+    token_path = '/etc/secrets/token.json'
+    creds_path = '/etc/secrets/credentials.json'
+
+    # Check if token.json exists (for OAuth refresh)
+    if os.path.exists(token_path):
+        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+
+    # If no valid creds, start OAuth flow
     if not creds or not creds.valid:
-        flow = InstalledAppFlow.from_client_secrets_file('/etc/secrets/credentials.json', SCOPES)
+        flow = InstalledAppFlow.from_client_secrets_file(creds_path, SCOPES)
         creds = flow.run_local_server(port=0)
-        with open('token.json', 'w') as token:
+
+        # Save token to /tmp (Render allows writing here)
+        with open('/tmp/token.json', 'w') as token:
             token.write(creds.to_json())
+
     return build('gmail', 'v1', credentials=creds)
 
 # ---------------- EMAIL PARSING ----------------
