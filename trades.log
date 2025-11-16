@@ -1,0 +1,151 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.176:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:root:\u274c Error: unauthorized.
+INFO:werkzeug:127.0.0.1 - - [14/Nov/2025 23:14:29] "POST /webhook HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.176:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:\u2705 BUY order placed for AAPL at approx 150.0
+INFO:werkzeug:127.0.0.1 - - [14/Nov/2025 23:21:10] "POST /webhook HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.179:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:52:53] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:53:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:54:13] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:54:21] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:54:31] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:54:41] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:54:43] "[31m[1mPOST /webhook HTTP/1.1[0m" 415 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:54:51] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:55:01] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:55:11] "GET /account HTTP/1.1" 200 -
+INFO:root:\u2705 BUY order placed for AAPL at approx 150.0
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:55:23] "POST /webhook HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:55:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:56:18] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:56:21] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:56:31] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:56:41] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:56:51] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:57:01] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:57:11] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:57:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.179:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:58:50] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:58:51] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:58:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:59:01] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:59:03] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:59:13] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:59:23] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:59:33] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:59:43] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Nov/2025 23:59:53] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.179:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:00:17] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:00:27] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:00:37] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:00:47] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:00:57] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:01:07] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:01:17] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:01:27] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:01:37] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:01:47] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:01:57] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:02:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:03:15] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:03:17] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:03:27] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:03:37] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:03:47] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:03:57] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:04:07] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:04:17] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:04:27] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:04:37] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:04:47] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:04:57] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:05:07] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:05:17] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:05:27] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:05:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:06:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:07:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:08:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:09:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:10:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:11:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:12:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:13:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:14:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:15:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:16:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:17:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:18:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:19:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:20:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:21:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:22:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:23:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:24:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:25:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:26:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:27:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:28:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:29:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:30:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:31:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:32:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:33:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:34:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:35:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:36:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:37:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:38:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:39:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:40:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:41:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:42:53] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:43:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:44:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:45:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:46:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:47:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:48:01] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:48:07] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:48:17] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:48:27] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:48:37] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:48:47] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:48:57] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:49:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:50:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:51:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:52:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:53:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:54:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:55:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:56:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:57:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:58:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 00:59:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 01:00:53] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 01:01:52] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Nov/2025 01:02:52] "GET /account HTTP/1.1" 200 -
