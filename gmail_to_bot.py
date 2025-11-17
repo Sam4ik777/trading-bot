@@ -19,14 +19,16 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 # ---------------- AUTH ----------------
 def gmail_authenticate():
     token_json = os.getenv("GMAIL_TOKEN")
+    
     if not token_json:
-        # Fallback to token.json file for local testing
+        # Fallback to Render secret file path
+        secret_path = "/etc/secrets/token.json"
         try:
-            with open("token.json", "r") as f:
+            with open(secret_path, "r") as f:
                 token_json = f.read()
-            logging.info("Loaded token from token.json file.")
+            logging.info(f"Loaded token from secret file: {secret_path}")
         except FileNotFoundError:
-            raise ValueError("GMAIL_TOKEN environment variable is missing and token.json file not found.")
+            raise ValueError("GMAIL_TOKEN env var and token.json secret file not found.")
     
     # Parse token and remove expiry to avoid parsing errors
     token_data = json.loads(token_json)
