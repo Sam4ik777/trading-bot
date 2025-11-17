@@ -20,20 +20,27 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 def gmail_authenticate():
     token_json = os.getenv("GMAIL_TOKEN")
     if not token_json:
-        raise ValueError("GMAIL_TOKEN environment variable is missing. Add it in Render dashboard.")
+        # Fallback to token.json file for local testing
+        try:
+            with open("token.json", "r") as f:
+                token_json = f.read()
+            logging.info("Loaded token from token.json file.")
+        except FileNotFoundError:
+            raise ValueError("GMAIL_TOKEN environment variable is missing and token.json file not found.")
     
-    creds = Credentials.from_authorized_user_info(json.loads(token_json), SCOPES)
+    # Parse token and remove expiry to avoid parsing errors
+    token_data = json.loads(token_json)
+    token_data.pop("expiry", None)  # Remove expiry if present
+
+    creds = Credentials.from_authorized_user_info(token_data, SCOPES)
     return build('gmail', 'v1', credentials=creds)
 
 # ---------------- EMAIL PARSING ----------------
 def extract_signal(body):
-    # Log the raw email body for debugging
     logging.info(f"Email body:\n{body}")
-
-    # Flexible regex for BUY/SELL, symbol, and price
     signal_match = re.search(r'\b(BUY|SELL)\b', body.upper())
-    symbol_match = re.search(r'(?:Symbol:\s*)?([A-Z]{1,6})', body)  # Matches 'Symbol: XYZ' or just XYZ
-    price_match = re.search(r'(?:Price:\s*)?(\d+\.\d+)', body)      # Matches 'Price: 123.45' or just 123.45
+    symbol_match = re.search(r'(?:Symbol:\s*)?([A-Z]{1,6})', body)
+    price_match = re.search(r'(?:Price:\s*)?(\d+\.\d+)', body)
 
     signal = signal_match.group(0) if signal_match else None
     symbol = symbol_match.group(1) if symbol_match else None
@@ -41,13 +48,13 @@ def extract_signal(body):
 
     return signal, symbol, price
 
+# ---------------- FETCH EMAIL ----------------
 def fetch_email(service, msg_id):
     try:
         msg = service.users().messages().get(userId='me', id=msg_id, format='raw').execute()
         raw_msg = base64.urlsafe_b64decode(msg['raw'].encode('ASCII'))
         mime_msg = email.message_from_bytes(raw_msg)
 
-        # Handle multipart emails
         if mime_msg.is_multipart():
             parts = mime_msg.get_payload()
             body = ""
@@ -58,7 +65,6 @@ def fetch_email(service, msg_id):
             body = mime_msg.get_payload()
 
         return body
-
     except Exception as e:
         logging.error(f"Error fetching email: {e}")
         return ""
@@ -92,7 +98,6 @@ def main():
                     signal, symbol, price = extract_signal(body)
                     if signal:
                         send_to_bot(signal, symbol, price)
-                    # Mark email as read
                     service.users().messages().modify(userId='me', id=msg_id, body={'removeLabelIds': ['UNREAD']}).execute()
                     last_checked_id = msg_id
 
