@@ -13,6 +13,7 @@ from googleapiclient.discovery import build
 SCOPES = ['https://www.googleapis.com/auth/gmail.modify']  # Allows read + mark as read
 CHECK_INTERVAL = 30  # seconds between Gmail checks
 WEBHOOK_URL = os.getenv("BOT_WEBHOOK_URL", "https://your-render-flask-service.onrender.com/webhook")
+TRADINGVIEW_SENDER = "noreply@tradingview.com"  # <-- ADDED
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
@@ -57,6 +58,8 @@ def fetch_email(service, msg_id):
         raw_msg = base64.urlsafe_b64decode(msg['raw'].encode('ASCII'))
         mime_msg = email.message_from_bytes(raw_msg)
 
+        sender = mime_msg['From']  # <-- ADDED
+
         if mime_msg.is_multipart():
             parts = mime_msg.get_payload()
             body = ""
@@ -66,10 +69,10 @@ def fetch_email(service, msg_id):
         else:
             body = mime_msg.get_payload()
 
-        return body
+        return body, sender  # <-- MODIFIED
     except Exception as e:
         logging.error(f"Error fetching email: {e}")
-        return ""
+        return "", ""
 
 # ---------------- SEND TO BOT ----------------
 def send_to_bot(signal, symbol, price):
@@ -96,7 +99,15 @@ def main():
             for msg in messages:
                 msg_id = msg['id']
                 if msg_id != last_checked_id:
-                    body = fetch_email(service, msg_id)
+                    body, sender = fetch_email(service, msg_id)  # <-- MODIFIED
+
+                    # Filter: Only process TradingView alerts
+                    if TRADINGVIEW_SENDER not in sender:
+                        logging.info(f"Skipping email from {sender}")  # <-- ADDED
+                        service.users().messages().modify(userId='me', id=msg_id, body={'removeLabelIds': ['UNREAD']}).execute()
+                        last_checked_id = msg_id
+                        continue
+
                     signal, symbol, price = extract_signal(body)
                     if signal:
                         send_to_bot(signal, symbol, price)
